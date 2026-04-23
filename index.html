@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>TaskFlow - Smart Todo App</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>⚡ TaskFlow</h1>
+        <p>Organize your day. Stay consistent.</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Add Task Section -->
+        <div class="card add-card">
+            <h2>Add New Task</h2>
+
+            <div class="input-group">
+                <input id="taskInput" placeholder="What do you need to do?">
+
+                <select id="priorityInput">
+                    <option value="High">🔥 High</option>
+                    <option value="Medium">⚡ Medium</option>
+                    <option value="Low">🌿 Low</option>
+                </select>
+
+                <input type="date" id="deadlineInput">
+
+                <button onclick="addTask()">+ Add</button>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="card control-card">
+            <h2>Manage Tasks</h2>
+
+            <div class="controls">
+
+                <button onclick="loadTasks()">All</button>
+                <button onclick="filterTasks(true)">Completed</button>
+                <button onclick="filterTasks(false)">Pending</button>
+
+                <select onchange="sortTasks(this.value)">
+                    <option value="">Sort By</option>
+                    <option value="deadline">📅 Deadline</option>
+                    <option value="priority">⚡ Priority</option>
+                </select>
+
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <div class="card list-card">
+            <h2>Your Tasks</h2>
+            <ul id="taskList"></ul>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

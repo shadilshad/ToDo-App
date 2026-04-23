@@ -1,0 +1,274 @@
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* App Wrapper */
+.app {
+  width: 100%;
+  max-width: 700px;
+  padding: 25px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input,
+select {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  transition: 0.2s;
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+input:focus,
+select:focus {
+  background: rgba(255, 255, 255, 0.35);
+  color: #000;
+}
+
+/* Buttons */
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 114, 255, 0.4);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+li:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Task text */
+.task {
+  flex: 1;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Meta info */
+.task-meta {
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+/* 🔥 Priority Colors */
+.priority-high {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.priority-medium {
+  color: #ffd93d;
+}
+
+.priority-low {
+  color: #6bcf63;
+}
+
+/* 🚨 Deadline States */
+.deadline-overdue {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.deadline-today {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.deadline-tomorrow {
+  color: #00e6ff;
+}
+
+/* 🔥 Urgent Glow */
+li.urgent {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px red; }
+  50% { box-shadow: 0 0 20px red; }
+  100% { box-shadow: 0 0 5px red; }
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ff4d4d;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #ff1f1f;
+  transform: scale(1.1);
+}
+
+/* 🔔 Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4d4d;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.3s;
+  font-size: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4d4d;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Urgent highlight */
+li.urgent {
+  border-left: 4px solid red;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px red; }
+  50% { box-shadow: 0 0 15px red; }
+  100% { box-shadow: 0 0 5px red; }
+}
